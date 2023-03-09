@@ -1,0 +1,17 @@
+<h3>Cart</h3>
+
+<div class="cart-item" *ngFor="let item of items">
+    <ng-container *ngIf="item">
+        <span>{{item.name}}</span>
+        <span>{{item.price | currency}}</span>
+        <button type="button" (click)="clear()">Borrar el carrito</button>
+
+    </ng-container>
+
+</div>
+
+<ng-container *ngFor="let item of items">
+    <div *ngIf="!item">
+        <p>Carrito vacio!</p>
+    </div>
+</ng-container>
